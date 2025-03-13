@@ -8,15 +8,6 @@ function IntroComponent() {
       <DescComponent />
       <div className="intro-avatar ml-5">
         <img className="w-full" src={fakeAvatar.src} alt="" />
-        <button type="button" className="popup-info">
-          <Link
-            href="../../../assets/files/CV_Flutter_Developer_Pham_Manh_Huy_EN_Ver2.pdf"
-            target="_blank"
-            download
-          >
-            Download my CV
-          </Link>
-        </button>
       </div>
     </section>
   );

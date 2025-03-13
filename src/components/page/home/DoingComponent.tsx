@@ -15,14 +15,14 @@ const services = [
     icon: webIcon,
   },
   {
-    title: "UI/UX Design",
-    text: "The most modern and high-quality design made at a professional level.",
-    icon: designIcon,
-  },
-  {
     title: "Backend Development",
     text: "High-performance backend services designed for scalability and seamless user experience.",
     icon: backendIcon,
+  },
+  {
+    title: "UI/UX Design",
+    text: "The most modern and high-quality design made at a professional level.",
+    icon: designIcon,
   },
 ];
 function Doing() {

@@ -74,6 +74,20 @@
     drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
 }
 
+.cv-info {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.436))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
 .flip-animation {
   display: flex;
   transform: translate3d(0, 0, 0);
