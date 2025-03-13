@@ -47,36 +47,124 @@
       filter: drop-shadow(0 4px 3px rgb(0, 0, 0))
         drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
     }
+    .popup-info {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
-.transform-animation {
-  animation: transformAnimation 3s infinite alternate linear;
+.popup-info {
+  z-index: 99999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.436))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
 }
 
-@keyframes transformAnimation {
-  from {
-    transform: translateY(-10px);
-  }
-  to {
-    transform: translateY(-0);
-  }
+.flip-animation {
+  display: flex;
+  transform: translate3d(0, 0, 0);
 }
 
-@keyframes scaleAnimation {
-  from {
-    transform: scale(0.9);
-  }
-  to {
-    transform: scale(0.8);
-  }
+.flip-animation > span {
+  font-size: 3rem;
+  color: black;
+  animation: flipping 2s infinite;
 }
 
-@keyframes scaleToCurrentAnimation {
-  from {
-    transform: scale(0.9);
-  }
-  to {
-    transform: scale(1);
-  }
+.flip-animation > span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.flip-animation > span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.flip-animation > span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.flip-animation > span:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.flip-animation > span:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.flip-animation > span:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.line-loading {
+  width: 50%;
+  height: 5px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.line-loading:before {
+  content: "";
+  position: absolute;
+  right: auto;
+  left: 0;
+  height: 100%;
+  background-color: #51b4fa;
+  opacity: 0.6;
+  animation: lineLoading 1s forwards infinite linear;
+}
+
+.circle-blur {
+  width: 25vw;
+  height: 25vw;
+  background-color: #f8a6f0;
+  border-radius: 10%;
+  filter: blur(60px);
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: moveAndScale 10s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+.circle-blur2 {
+  width: 30vw;
+  height: 30vw;
+  background-color: #51b4fa;
+  border-radius: 50%;
+  filter: blur(60px);
+  position: fixed;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: moveAndScale 15s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+.circle-blur3 {
+  width: 30vw;
+  height: 30vw;
+  background-color: #f8d997;
+  border-radius: 50%;
+  filter: blur(60px);
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: moveAndScale 15s infinite alternate ease-in-out;
+  z-index: -1;
 }
