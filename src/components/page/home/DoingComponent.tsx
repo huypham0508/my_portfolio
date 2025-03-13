@@ -1,3 +1,4 @@
+import Image from "next/image";
 import mobileIcon from "@/assets/icons/mobile_icon.svg";
 import webIcon from "@/assets/icons/web_icon.svg";
 import designIcon from "@/assets/icons/design_icon.svg";
@@ -25,6 +26,7 @@ const services = [
     icon: designIcon,
   },
 ];
+
 function Doing() {
   return (
     <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -34,9 +36,11 @@ function Doing() {
           className="flex items-center gap-4 p-6 bg-[#111] rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
         >
           <div className="w-12 h-12 flex items-center justify-center">
-            <img
+            <Image
               src={service.icon.src}
               alt={`${service.title} icon`}
+              width={40}
+              height={40}
               className="w-10 h-10"
             />
           </div>

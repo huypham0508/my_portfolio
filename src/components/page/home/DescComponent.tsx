@@ -69,14 +69,13 @@ function DescComponent() {
     </div>
   );
 
-  const downloadButton = (
+  const seeMyCV = (
     <Link
       className="cv-info mx-auto md:mx-0 block w-auto max-w-fit mt-5"
       href="/files/CV_Flutter_Developer_Pham_Manh_Huy_EN_Ver2.pdf"
       target="_blank"
-      download="CV_Flutter_Developer_Pham_Manh_Huy_EN_Ver2.pdf"
     >
-      Download my CV
+      👉 Check out my CV.
     </Link>
   );
 
@@ -92,7 +91,7 @@ function DescComponent() {
 
       {renderSocialLinks}
       {renderTechStack}
-      {downloadButton}
+      {seeMyCV}
     </div>
   );
 }

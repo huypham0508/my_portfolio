@@ -21,14 +21,14 @@ function AboutComponent() {
           mobile and backend integration.
           <br />
           <span className="font-bold">
-            🌱 I’m currently working on a chat app
+            🌱 I&#39;m currently working on a chat app
           </span>
           <br />
           <span className="font-bold">
-            💞️ I’m looking to collaborate on anywhere
+            💞️ I&#39;m looking to collaborate on anywhere
           </span>
         </p>
-        <h3 className="text-3xl font-bold mb-4">What i'm doing</h3>
+        <h3 className="text-3xl font-bold mb-4">What I&#39;m doing</h3>
         <Doing />
       </div>
     </section>

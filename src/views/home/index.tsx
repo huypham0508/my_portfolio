@@ -11,15 +11,15 @@ export default function HomeView() {
     { name: "About", component: <AboutComponent /> },
   ];
 
-  const sections = components.map(() => useRef<HTMLDivElement | null>(null));
+  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       let newIndex = 0;
-      sections.forEach((ref, index) => {
-        if (ref.current) {
-          const rect = ref.current.getBoundingClientRect();
+      sectionsRef.current.forEach((ref, index) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
           if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
             newIndex = index;
           }
@@ -30,18 +30,23 @@ export default function HomeView() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sections]);
+  }, []);
 
   const scrollToNext = () => {
-    const nextIndex = (currentIndex + 1) % sections.length;
-    sections[nextIndex].current?.scrollIntoView({ behavior: "smooth" });
+    const nextIndex = (currentIndex + 1) % components.length;
+    sectionsRef.current[nextIndex]?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
       <Header />
       {components.map((item, index) => (
-        <div key={item.name} ref={sections[index]}>
+        <div
+          key={item.name}
+          ref={(el) => {
+            sectionsRef.current[index] = el;
+          }}
+        >
           {item.component}
         </div>
       ))}
