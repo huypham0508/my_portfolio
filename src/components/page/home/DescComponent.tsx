@@ -14,19 +14,28 @@ import scssIcon from "@/assets/icons/sass_icon.png";
 import tailwindIcon from "@/assets/icons/tailwind_icon.png";
 import nodejsIcon from "@/assets/icons/nodejs_icon.png";
 import dockerIcon from "@/assets/icons/docker_icon.png";
+import graphqlIcon from "@/assets/icons/graphql_icon.png";
+import redisIcon from "@/assets/icons/redis_icon.png";
+import mongoDBIcon from "@/assets/icons/mongodb_icon.png";
+import sqlIcon from "@/assets/icons/sql_icon.png";
+import ButtonCV from "./ButtonCVComponent";
 
 const techStackIcons = [
   { src: htmlIcon, alt: "HTML" },
   { src: cssIcon, alt: "CSS" },
   { src: jsIcon, alt: "JavaScript" },
-  { src: nodejsIcon, alt: "Node.js" },
-  { src: flutterIcon, alt: "Flutter" },
   { src: reactIcon, alt: "React" },
+  { src: nodejsIcon, alt: "Node.js" },
   { src: nextIcon, alt: "Next.js" },
   { src: tailwindIcon, alt: "Tailwind CSS" },
   { src: scssIcon, alt: "Sass" },
-  { src: dockerIcon, alt: "Docker" },
+  { src: flutterIcon, alt: "Flutter" },
   { src: githubIcon, alt: "GitHub" },
+  { src: mongoDBIcon, alt: "MongoDB" },
+  { src: dockerIcon, alt: "Docker" },
+  { src: graphqlIcon, alt: "Graphql" },
+  { src: redisIcon, alt: "Redis" },
+  { src: sqlIcon, alt: "SQL" },
   { src: firebaseIcon, alt: "Firebase" },
 ];
 
@@ -37,16 +46,15 @@ const socialLinks = [
 
 function DescComponent() {
   const renderTechStack = (
-    <div>
+    <div className="md:max-w-[25vw]">
       <span className="font-bold text-2xl">Tech stack |</span>
-      <div className="flex flex-wrap mt-3 items-center justify-center md:justify-start gap-3">
+      <div className="flex transform-animation flex-wrap mt-3 items-center justify-center md:justify-start gap-3">
         {techStackIcons.map(({ src, alt }) => (
           <Image
             key={alt}
             height={40}
             width={40}
             alt={`${alt} icon`}
-            className="transform-animation"
             src={src}
           />
         ))}
@@ -69,29 +77,19 @@ function DescComponent() {
     </div>
   );
 
-  const seeMyCV = (
-    <Link
-      className="cv-info mx-auto md:mx-0 block w-auto max-w-fit mt-5"
-      href="/files/CV_Flutter_Developer_Pham_Manh_Huy_EN_Ver2.pdf"
-      target="_blank"
-    >
-      👉 Check out my CV.
-    </Link>
-  );
-
   return (
     <div>
-      <h1 className="text-5xl font-bold md:mt-32 sm:mt-20 mb-2">
+      <h1 className="text-5xl inline-block font-bold md:mt-32 sm:mt-20 mb-2">
         Software Developer
       </h1>
-      <p className="mb-5 text-gray-500 max-w-full md:max-w-[30vw]">
-        Hi, I&apos;m Pham Manh Huy. A passionate Software Developer based in
-        HCM, Viet Nam. 🇻🇳 🌸
+      <p className="mb-5 text-gray-500  ">
+        Hi, I&apos;m Pham Manh Huy. A passionate Software Developer <br /> based
+        in HCM, Viet Nam. 🇻🇳 🌸
       </p>
 
       {renderSocialLinks}
       {renderTechStack}
-      {seeMyCV}
+      <ButtonCV className="block md:hidden" />
     </div>
   );
 }
